@@ -8,17 +8,21 @@ public class ex02_103051060 {
 	public static void main(String[] args) {
 		Scanner scn = new Scanner(System.in);
 		char check = 'Y';
+		float fin;
+		String [] st;
+		String str;
 		while(check=='Y'||check=='y'){
-			String str = scn.nextLine();
-			String [] st = str.split(" ");
-			float fin = 0f;
+			str = scn.nextLine();
+			st = str.split(" ");
+			fin = 0f;
 			for(int i = 0 ; i<st.length ; i++){
 				fin=fin+Float.valueOf(st[i]);
 			}
 			fin=fin/st.length;
+			fin=(float)(Math.round(fin*1000))/1000;
 			System.out.println("Size: "+st.length+"\nAverage: "+fin);
 			System.out.print("Next?(Y/N): ");
-			check = scn.next().charAt(0);
+			check = scn.nextLine().charAt(0);
 		}
 	}
 }

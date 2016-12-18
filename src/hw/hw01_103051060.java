@@ -3,8 +3,32 @@ package hw;
  * Date: 2016/12/12
  * Author: 103051060  黃雅鈴
  */
+import java.util.Scanner; 
 public class hw01_103051060 {
 	public static void main(String[] args) {
-
+		Scanner scn = new Scanner(System.in);
+		String str = scn.nextLine();
+		char [] chr = str.toCharArray();
+		int num = scn.nextInt();
+		for(int i =0 ; i<chr.length ; i++){
+			if('A'<=chr[i]&&chr[i]<='Z'){
+				chr[i]=(char)(chr[i]+num);
+				if(chr[i]>'Z'){
+					chr[i]=(char)((chr[i]-'Z')%26+'A'-1);
+				}
+			}else if('a'<=chr[i]&&chr[i]<='z'){
+				chr[i]=(char)(chr[i]+num);
+				if(chr[i]>'z'){
+					chr[i]=(char)((chr[i]-'z')%26+'a'-1);
+				}
+			}else if('0'<=chr[i]&&chr[i]<='9'){
+				chr[i]=(char)(chr[i]+num);
+				if(chr[i]>'9'){
+					chr[i]=(char)((chr[i]-'9')%10+'0'-1);
+				}
+			}
+			System.out.print(chr[i]);
+		}
+		System.out.println();
 	}
 }
